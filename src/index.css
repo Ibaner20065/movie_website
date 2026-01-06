@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base body */
+body {
+  font-family: 'Cinzel', serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: white;
+  background: radial-gradient(
+    ellipse at center,
+    #2b2b2b 0%,
+    #0b0b0b 70%,
+    #000000 100%
+  );
+}
+
+/* Fog animation */
+@keyframes fogMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Fog layer */
+.fog {
+  position: absolute;
+  inset: 0;
+  background: url("https://www.transparenttextures.com/patterns/cloudy-day.png");
+  opacity: 0.25;
+  animation: fogMove 60s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
